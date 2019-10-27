@@ -1,0 +1,28 @@
+<apex:page controller="Parent_child_Soql_example" rendered="false">
+    <apex:form >
+        <apex:pageBlock title="Parent_child_Soql">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="standardlookup" action="{!stdobjct_standardlkp}"/>
+                <apex:commandButton value="customlookup" action="{!stdobj_customlookup}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!accs}" var="a" rendered="{! flag1}">
+                <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.industry}"/>
+                <apex:column headerValue="contacts">
+                <apex:repeat value="{!a.contacts}" var="b">
+                    {!b.lastname}.{!b.firstname}<br/>
+                </apex:repeat>
+                </apex:column>
+                 </apex:pageBlockTable>
+            <apex:pageBlockTable value="{!accs}" var="a" rendered="{! flag2}">
+                <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.industry}"/>
+                <apex:column headerValue="contacts">
+                <apex:repeat value="{!a.Customcontacts__r}" var="b">
+                    {!b.lastname}.{!b.firstname}<br/>
+                    </apex:repeat>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

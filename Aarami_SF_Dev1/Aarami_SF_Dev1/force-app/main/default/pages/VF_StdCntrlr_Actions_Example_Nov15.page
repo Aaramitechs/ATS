@@ -1,0 +1,34 @@
+<!--
+Page Name	:VF_StdCntrlr_Actions_Example_Nov15
+Test3 URL 	:https://c.ap4.visual.force.com/apex/VF_StdCntrlr_Actions_Example_Nov15?Id=0016F00002UXVEm
+-->
+<apex:page standardController="Account" >
+    <apex:form >
+        <apex:pageBlock title="Account Details Title">
+            <center>
+                <apex:outputLink value=" {!URLfor($Action.Account.New)}">
+                    New Account
+                </apex:outputLink>
+                <br/>
+            </center>
+            <apex:pageBlockSection title="Information section" columns="2">
+                <apex:outputField value="{!Account.Name}"/>
+                <apex:outputField value="{!Account.AccountNumber}"/>
+                <apex:outputField value="{!Account.Phone}"/>
+                <apex:outputField value="{!Account.Industry}"/>
+                <apex:outputField value="{!Account.Website}"/>
+                <apex:outputField value="{!Account.Type}"/>
+                <apex:outputField value="{!Account.AnnualRevenue}"/>
+                <apex:outputField value="{!Account.Rating}"/>
+                <apex:outputField value="{!Account.CurrencyIsoCode}"/>
+                <apex:outputField value="{!Account.Fax}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="New" action="{!URLFOR($Action.Account.New)}"/>
+                <apex:commandButton value="Edit" action="{!URLFOR($Action.Account.Edit,Account.Id)}"/>
+                <apex:commandButton value="Delete" action="{!URLFOR($Action.Account.Delete,Account.Id)}"/>
+                <apex:commandButton value="View" action="{!URLFOR($Action.Account.View,Account.Id)}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock> 
+    </apex:form>
+</apex:page>

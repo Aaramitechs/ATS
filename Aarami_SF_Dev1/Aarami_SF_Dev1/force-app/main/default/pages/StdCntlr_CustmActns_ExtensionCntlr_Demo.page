@@ -1,0 +1,37 @@
+<!--  FileName:StdCntlr_CustmActns_ExtensionCntlr_Demo.vfp
+Std Controller: RESOURCE__c
+Objective: Give Demo on StdCntlr_CustmActns_ExtensionCntlr
+Developer: Durga Prasad
+-->
+
+<apex:page standardController="RESOURCE__c" extensions="StdCntlr_CustmActns_ExtensionCntlr_Demo">
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock tabStyle="RESOURCE__c" >
+            
+            <apex:pageBlockSection title="RESOURCE Detail">
+                <apex:inputField value="{!RESOURCE__c.Name}"/>
+                <apex:inputField value="{!RESOURCE__c.DESCRIPTION__c        }"/>
+                <apex:inputField value="{!RESOURCE__c.SUBJECTS__c}"/>
+                <apex:inputField value="{!RESOURCE__c.MOBILE_NO__c}"/>
+                <apex:inputField value="{!RESOURCE__c.PARENT__c}"/>        
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Personal Detail" collapsible="false">
+                <apex:inputField value="{!RESOURCE__c.WEIGHT__c}"/> 
+                <apex:inputField value="{!RESOURCE__c.HEIGHT__c}"/> 
+                <apex:inputField value="{!RESOURCE__c.GENDER__c}"/> 
+                <apex:inputField value="{!RESOURCE__c.DOB__c}"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save app" action="{!custm_Actns}"/>
+                <apex:commandButton value="quicksave app" action="{!quicksave}"/>
+                
+                <apex:commandButton value="cancel app" action="{!cancel}"/>
+                
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+        
+    </apex:form>
+    
+</apex:page>

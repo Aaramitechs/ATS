@@ -1,0 +1,84 @@
+<!--Page Name: All_VF_Pages_Nov15
+test4 url  :https://c.ap4.visual.force.com/apex/All_VF_Pages_Nov15?Id=0016F00002fNL05-->
+
+    <apex:page showHeader="false" showChat="false" docType="HTML-5.0" tabStyle="Account" >
+    
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        }
+        
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+        background-color: #33CAFF;
+        }
+        tr:nth-child(odd) {
+        background-color: #33CAFF;
+        }
+            
+        
+        
+    </style>
+    
+    
+    <br/><br/>
+    <apex:pageBlock >
+        
+        <center><h1>All VF Pages</h1> 
+            <br/>
+            
+            <br/>
+            <table >
+                <tr>
+                    <th>VF Page Name</th>
+                    <th>Test URL</th>
+                </tr>
+                <tr>
+                    <td>VF_StdCntrlr_Actions_Example_Nov15</td>
+                    <td>
+                        <a href="https://c.ap4.visual.force.com/apex/VF_StdCntrlr_Actions_Example_Nov15?Id=0016F00002UXVEm"
+                           target="_blank">
+                            Test3 UR
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>VF_Outputfield_Example_Nov15</td>
+                    <td>
+                        <a href="https://c.ap4.visual.force.com/apex/VF_Outputfield_Example_Nov15?Id=0016F00002fNL05"
+                           target="_blank">
+                         Test1 url
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%">VF_StdCntrlr_InputForm_Example_Nov15</td>
+                    <td>
+                        <a href="https://c.ap4.visual.force.com/apex/VF_StdCntrlr_InputForm_Example_Nov15?Id=0016F00002fNKzN"
+                           target="_blank">
+                           Test2 Url                        
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%">All_VF_Pages_Nov15</td>
+                    <td>
+                        <a href="https://c.ap4.visual.force.com/apex/All_VF_Pages_Nov15?Id=0016F00002fNL05"
+                           target="_blank">
+                            test4 url
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </center>
+        
+    </apex:pageBlock>
+    
+</apex:page>

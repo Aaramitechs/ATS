@@ -1,0 +1,120 @@
+<!-- Page Name: SelectList_Demo_Extnsn_Nov26_VF
+Test URL: https://c.ap4.visual.force.com/apex/SelectList_Demo/234234j234hsfe
+-->
+
+
+<apex:page standardController="Case" recordSetvar="cases" extensions="SelectList_Demo_Extnsn_Nov26">
+   
+    
+    <apex:pageBlock title="SelectList using ActionSupport" >
+        <apex:form id="theForm">
+            <apex:panelGrid columns="2">
+                <apex:outputLabel value="View:"/>
+                <apex:selectList value="{!filterId}" size="1" >
+                    <apex:actionSupport event="onchange" rerender="list"/>
+                    <apex:selectOptions value="{!listviewoptions}"/>
+                </apex:selectList>
+            </apex:panelGrid>
+            <apex:pageBlockSection >
+                <apex:dataList var="c" value="{!cases}" id="list">
+                {!c.subject}
+                </apex:dataList>
+            </apex:pageBlockSection>
+        </apex:form>
+    </apex:pageBlock>
+    
+    <br/>
+    <apex:pageBlock title="Select List - Static Options">
+        <apex:form id="theForm">
+            <apex:pageBlockSection >
+            
+                <apex:dataList var="c" value="{!cases}" id="list2">
+                {!c.subject}
+                </apex:dataList>
+            </apex:pageBlockSection>
+            <apex:panelGrid cellpadding="5" cellspacing="5" columns="5" >
+                <apex:commandButton value="|< First" action="{!first}" reRender="list2" />
+                <apex:commandButton value="< Previous" action="{!previous}" rendered="{!HasPrevious}" reRender="list2" />
+                <apex:commandButton value="Next >" action="{!next}" rendered="{!HasNext}" reRender="list2" />
+                <apex:commandButton value="Last >|" action="{!last}" reRender="list2"  />
+                
+            </apex:panelGrid>
+            
+            <br/>
+            <apex:panelGroup >
+                <apex:outputText value="Records/Page"></apex:outputText>&nbsp;&nbsp;
+               
+                <apex:selectList value="{!pageSize}" size="1">
+                    <apex:selectOption itemValue="5" itemLabel="size 5"></apex:selectOption>
+                    <apex:selectOption itemValue="10" itemLabel="size 10"></apex:selectOption>
+                    <apex:selectOption itemValue="15" itemLabel="size 15"></apex:selectOption>
+                </apex:selectList>&nbsp;&nbsp;
+                
+                <apex:commandButton action="{!refreshPageSize}" value="Update Page Size" rerender="list2"/>
+            </apex:panelGroup>
+        </apex:form> 
+    </apex:pageBlock>
+    
+    
+    	<apex:form >
+        <apex:actionFunction name="refreshPageSize" action="{!refreshPageSize_AF}" status="fetchStatus" reRender="pbId"/>
+        <apex:pageBlock id="pbId" title="SelectList - Using ActionFunction">
+            <apex:pageBlockSection title="All Cases" collapsible="false" columns="1">
+                <apex:pageBlockTable value="{!CustCaseRecs}" var="cs_1">
+                     
+                    <apex:column headerValue="Case Subject">
+                        <apex:outputField value="{!cs_1.Subject}"/>
+                    </apex:column>
+                     
+                    <apex:column headerValue="Account Name">
+                        <apex:outputField value="{!cs_1.Account.name}"/>
+                    </apex:column>
+                     
+                    <apex:column headerValue="Amount">
+                        <apex:outputField value="{!cs_1.CaseNumber}"/>
+                    </apex:column>
+                     
+                    <apex:column headerValue="Stage">
+                        <apex:outputField value="{!cs_1.Origin }"/>
+                    </apex:column>
+                     
+                    <apex:column headerValue="Last Activity Date">
+                        <apex:outputField value="{!cs_1.LastModifiedDate}"/>
+                    </apex:column>
+                     
+                    <apex:column headerValue="Closed Date">
+                        <apex:outputField value="{!cs_1.ClosedDate }"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+                 
+                <apex:panelGrid columns="8"> 
+               <apex:selectList value="{!size}" multiselect="false" size="1" onchange="refreshPageSize();"> 
+                    <apex:selectOptions value="{!paginationSizeOptions}"/>
+                </apex:selectList>
+                 
+                <apex:commandButton status="fetchStatus" reRender="pbId" value="First" action="{!setCon.first}" disabled="{!!setCon.hasPrevious}" title="First Page"/> 
+  
+                <apex:commandButton status="fetchStatus" reRender="pbId" value="Previous" action="{!setCon.previous}" disabled="{!!setCon.hasPrevious}" title="Previous Page"/> 
+  
+                <apex:commandButton status="fetchStatus" reRender="pbId" value="Next" action="{!setCon.next}" disabled="{!!setCon.hasNext}" title="Next Page"/> 
+  
+                <apex:commandButton status="fetchStatus" reRender="pbId" value="Last" action="{!setCon.last}" disabled="{!!setCon.hasNext}" title="Last Page"/> 
+  
+                <apex:outputText >{!(setCon.pageNumber * size)+1-size}-{!IF((setCon.pageNumber * size)>totRecSize, totRecSize,
+                     (setCon.pageNumber * size))} of {!totRecSize}
+                </apex:outputText> 
+                       
+                <apex:outputPanel >                      
+                    <apex:actionStatus id="fetchStatus" >
+                        <apex:facet name="start" >
+                          <img src="/img/loading.gif" />                    
+                        </apex:facet>
+                    </apex:actionStatus>
+                </apex:outputPanel> 
+  
+            </apex:panelGrid>  
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

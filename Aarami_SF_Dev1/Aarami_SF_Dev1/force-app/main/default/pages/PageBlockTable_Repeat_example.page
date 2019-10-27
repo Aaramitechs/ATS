@@ -1,0 +1,36 @@
+<!-- 
+VF_PageblockTable_Repeat_Example.vfp
+Test URL : 
+with Childs: https://c.ap4.visual.force.com/apex/VF_PageblockTable_Repeat_Example?id=a016F00001hN4FZ
+without Childs: https://c.ap4.visual.force.com/apex/VF_PageblockTable_Repeat_Example?id=a016F00001hNA7C
+--><apex:page standardController="RESOURCE__c" >
+    <apex:pageBlock title="apex:Repeat example" >    
+        <apex:sectionHeader title="Resource Details"/>
+        <apex:repeat value="{!$ObjectType.RESOURCE__c.FieldSets.RESOURCE_field_set}" var="field">
+            <p class="p-mrgn">
+                <apex:outputText value="{!field.Label} :" style="font-size:8pt; font-weight:bold;"/>
+                <apex:OutputText value="{!RESOURCE__c[field]}"  style="font-size:8pt;"/>
+            </p>
+        </apex:repeat>  
+    </apex:pageBlock>
+        <br/><br/>
+    <apex:outputPanel >
+        <apex:sectionHeader title="Resource Child List"/>
+        <apex:pageBlock title="PageBlockTable Example">
+            <apex:pageBlockTable value="{!RESOURCE__c.RESOURCES__r}" var="child" title="Custom Child Resorces">
+                <apex:column headerValue="Actions">
+                    <apex:outputLink value="https://ap4.salesforce.com/{!RESOURCE__c.Id}/e?retURL={!RESOURCE__c.Id}" target="_balnk"> Edit
+                    </apex:outputLink>
+                </apex:column>
+                <apex:column value="{!child.name}"/>
+                <apex:column value="{!child.DOB__c}"/>
+                <apex:column value="{!child.GENDER__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:outputPanel>
+    <br/>
+    <font color="Green" size="6pt"> 
+    	There are no child records for this Resource Record
+    </font>
+    <br/>
+</apex:page>

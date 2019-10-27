@@ -1,0 +1,19 @@
+<!--page name: mypage1.vfp-->
+<apex:page showHeader="false" standardController="RESOURCE__c"  tabStyle="Account" docType="HTML-5.0">
+<apex:form >
+<apex:pageBlock title="details of {!RESOURCE__c.Name}">
+<apex:pageBlocksection title="general info" >
+<apex:inputField value="{!RESOURCE__c.Name}"/>
+<apex:inputfield value="{!RESOURCE__c.DOB__c}"/>
+<apex:outputField value="{!RESOURCE__c.GENDER__c}"/>
+<apex:inputField value="{!RESOURCE__c.GENDER__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="contact info">
+{!RESOURCE__c.RecordType}<br/>
+{!RESOURCE__c.MOBILE_NO__c}<br/>
+{!RESOURCE__c.PARENT__r}
+
+</apex:pageBlocksection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

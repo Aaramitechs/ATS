@@ -1,0 +1,21 @@
+<apex:page controller="Soql_example1" sidebar="false" showHeader="false">
+    <apex:form >
+       <!-- <apex:image  value="{!$Resource.dpresourse1}"/>-->
+        <apex:pageblock title="soql result">
+            <apex:pageBlockButtons location="Top">
+                <apex:commandButton value="Offset" action="{!getoffset}"/>
+                <apex:commandButton value="limit" action="{!getlimit}"/>
+                <apex:commandButton value="All Records" action="{!getAllrecords}"/>
+                <apex:commandButton value="deletdrecords" action="{!getdeletedrecords}"/>
+                <apex:commandButton value="order by Name" action="{!getorderby}"/>
+                <apex:commandButton value="desc order" action="{!getdescorder}"/>
+                <apex:commandButton value="pagination" action="{!getpagination}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!Accs}" var="a">
+                <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.Industry}"/>
+            </apex:pageBlockTable>
+           
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

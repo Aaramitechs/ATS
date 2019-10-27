@@ -1,0 +1,22 @@
+<apex:page >
+    
+     <apex:sectionHeader title="{!$ObjectType.RESOURCE__c.LabelPlural}"
+                         subtitle="Resource List Views"
+                         help="Hlep_VFPageName" description="Test Description"
+                         printUrl="TestURL_VFPageName" />
+    <apex:listViews type="RESOURCE__c" />
+
+    <apex:EnhancedList type="RESOURCE__c" height="100" listId="00B6F00000GcfYd" 
+                           rowsPerPage="10"
+                            customizable="false"  />
+
+        
+<!--    
+        <apex:EnhancedList type="Resource__c" height="580" listId="00B6F00000GcfYd" 
+                           rowsPerPage="10"
+                            customizable="false"  />
+        Enhanced list view is to sepcify the list to be displayed on the page
+-->    
+    
+    
+</apex:page>

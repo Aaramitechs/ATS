@@ -1,0 +1,68 @@
+<!--
+
+FileName: StdCntrlr_Demo.vfp
+Std Controller: RESOURCE__c
+Objective: Give Demo on Standard Controller
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Developer:Bhupathi Durga Prasad
+TEST URL:https://bhupathi19-dev-ed--c.ap4.visual.force.com/apex/StdCntrlr_Demo_example?id=a086F000029fEpi
+API: https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_controller_std_actions.htm?search_text=standard%20controller
+                (Using Standard Controller Actions)
+-->
+
+<apex:page standardController="RESOURCE__c">
+    
+    <apex:form >
+    
+    <apex:pageBlock title="Application Details" tabStyle="Account" >
+        <apex:pageBlockSection title="Application Detail" collapsible="false"  >
+            <apex:outputField value="{!  RESOURCE__c.Name }" />
+            <apex:outputField value="{!  RESOURCE__c.full_name__c }" />
+            <apex:outputField value="{!  RESOURCE__c.PARENT__c }" />
+            <apex:outputField value="{!  RESOURCE__c.EMAIL_ID__c }" />
+            <apex:outputField value="{!  RESOURCE__c.Owner.Name }" />     
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="Previous Class Details">
+            {!RESOURCE__c.Name}
+            <apex:outputField value="{! RESOURCE__c.Industry__c }" />
+            <apex:outputField value="{!  RESOURCE__c.QUALIFICATION__c }" />
+            <apex:outputField value="{!  RESOURCE__c.TOTAL_MARKS__c }" />
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockButtons >
+                <apex:commandButton action="{! Edit }" value="Edit App" />
+            <apex:commandButton action="{! delete }" value="Delete App" />
+            <apex:commandButton action="{! Save }" value="Save App" />
+            <apex:commandButton action="{! Quicksave }" value="Quicksave" />
+            <apex:commandButton action="{! cancel }" value="Cancel App" />
+            <apex:commandButton action="{! list }" value="List App" />
+        </apex:pageBlockButtons>       
+        
+    </apex:pageBlock>
+   </apex:form> 
+    
+    <!-- Dynamic binding / sobject binding -->
+    
+</apex:page>

@@ -1,0 +1,14 @@
+<!-- 
+VF_FieldSet_Example_Nov16.vfp
+Test URL : https://c.ap4.visual.force.com/apex/VF_FieldSet_Example?id=a016F00001hN4FZ
+-->
+
+<apex:page standardController="RESOURCE__c" >
+    <apex:repeat value="{!$ObjectType.RESOURCE__c.FieldSets.RESOURCE_field_set}" var="field">
+        <p class="p-mrgn">
+            <apex:outputText value="{!field.Label} :" style="font-size:8pt; font-weight:bold;"/>
+            <apex:OutputText value="{!RESOURCE__c[field]}"  style="font-size:8pt;"/>
+        </p>
+    </apex:repeat>    
+    
+</apex:page>

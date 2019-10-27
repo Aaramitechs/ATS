@@ -1,0 +1,36 @@
+<apex:page controller="JSON_Cntrlr_Nov29">
+    
+    <apex:form >
+        
+        <strong>Output through the list in data table</strong>:<br/><br/>   
+        <apex:pageblock >
+            <apex:PageBlockTable value="{!acc}" var="key">
+                
+                <apex:column >
+                    <apex:facet name="header">Account Name</apex:facet>
+                    {!key.Name}
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">Account Number</apex:facet>
+                    {!key.AccountNumber}
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Account Source</apex:facet>
+                    {!key.AccountSource}
+                </apex:column>
+                
+            </apex:PageBlockTable>
+        </apex:pageblock>
+        
+        <br/><br/>
+        
+        <strong>Output Via JSON serialize method</strong> :<br/><br/> {!jsonSerial}
+        
+        <br/><br/>
+        
+        <strong>Output Via JSON Generator method</strong> :<br/><br/> {!jsonGen}
+        
+    </apex:form>
+    
+</apex:page>

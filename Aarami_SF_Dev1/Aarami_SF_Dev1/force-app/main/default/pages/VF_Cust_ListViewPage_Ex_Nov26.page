@@ -1,0 +1,29 @@
+<!-- VF_Cust_ListViewPage_Ex_Nov26.vfp 
+Test URL: https://bhupathi19-dev-ed--c.ap4.visual.force.com/apex/VF_Cust_ListViewPage_Ex_Nov26?core.apexpages.request.devconsole=1&j_id0%3Aj_id2%3Afcf=00B6F00000I6Zzp
+-->
+
+
+<apex:page >
+    
+     <apex:sectionHeader title="{!$ObjectType.RESOURCE__c.LabelPlural}"
+                         subtitle="Resource List Views"
+                         help="Hlep_VFPageName" description="Test Description"
+                         printUrl="TestURL_VFPageName" />
+    
+   <apex:listViews type="RESOURCE__c" />
+
+   <apex:EnhancedList type="RESOURCE__c" height="50" listId="00B6F00000I6Zzp" 
+                           rowsPerPage="10"
+                            customizable="false" />
+     </apex:page>
+
+ 
+
+
+        
+<!--    
+        <apex:EnhancedList type="Resource__c" height="580" listId="00B6F00000I6Zzp" 
+                           rowsPerPage="10"
+                            customizable="false"  />
+        Enhanced list view is to sepcify the list to be displayed on the page
+-->

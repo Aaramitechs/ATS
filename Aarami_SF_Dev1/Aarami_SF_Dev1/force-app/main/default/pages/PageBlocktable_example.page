@@ -1,0 +1,49 @@
+<apex:page standardController="Contact" recordSetVar="cons">
+    <style>
+        .one{ Background:#DF3A01
+        }
+         .two{ Background:#29088A
+        }
+         .three{ Background:#CEE3F6
+        }
+         .four{ width:100px;
+        }
+        
+        
+    </style>
+    <apex:pageBlock title="PageBlock Table">
+        <apex:pageBlockTable value="{!cons}" var="b">
+            <apex:column value="{!b.Name}"/>
+            <apex:column value="{!b.Lastname}"/>
+            <apex:column value="{!b.phone}"/>
+            <apex:column value="{!b.Email}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="PageBlock Table">
+        <apex:pageBlockTable value="{!cons}" var="b" first="10" rows="5">
+            <apex:column value="{!b.Name}"/>
+            <apex:column value="{!b.Lastname}"/>
+            <apex:column value="{!b.phone}"/>
+            <apex:column value="{!b.Email}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="PageBlock Table">
+        <apex:pageBlockTable value="{!cons}" var="b" columnsWidth="100,100,100,100">
+            <apex:column value="{!b.Name}"/>
+            <apex:column value="{!b.Lastname}"/>
+            <apex:column value="{!b.phone}"/>
+            <apex:column value="{!b.Email}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="PageBlock Table">
+        <apex:pageBlockTable value="{!cons}" var="b" captionClass="one" footerClass="two" headerClass="three">
+            <apex:facet name="caption">PageBlockTable Caption</apex:facet>
+            <apex:facet name="header">PageBlockTable Header</apex:facet>
+            <apex:facet name="footer">PageBlockTable Footer</apex:facet>
+            <apex:column value="{!b.Name}"/>
+            <apex:column value="{!b.Lastname}"/>
+            <apex:column value="{!b.phone}"/>
+            <apex:column value="{!b.Email}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

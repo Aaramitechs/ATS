@@ -1,0 +1,15 @@
+<!--
+FileName: APexClass_Data.vfp
+Controller: ApexClass_Example
+Objective: Give Demo on Reffering APexClass_Data in the VF page
+Developer:Bhupathi Durga Prasad
+TEST URL:https://bhupathi19-dev-ed--c.ap4.visual.force.com/apex/APexClass_Data?core.apexpages.request.devconsole=1
+
+	1.ApexClass which we want to reffer in the VF page that should be defined in the controller
+	2.we can define only one apexclass as a controller in the VF page
+	3.Apexclass which we are calling in the vf page should not have any parameters in the constructor
+-->
+<apex:page controller="ApexClass_Example">
+    Name:{!name}<br/><br/>
+    Branch:{!Branch}
+</apex:page>

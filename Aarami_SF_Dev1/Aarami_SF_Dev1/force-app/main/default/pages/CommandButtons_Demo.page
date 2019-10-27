@@ -1,0 +1,18 @@
+<!--
+FileName: CommandButtons_Demo.vfp
+Controller: Button_Example
+Objective: Give Demo on  commandbuttons by using controller reffering in vf page
+Developer:Bhupathi Durga Prasad
+TEST URL:https://bhupathi19-dev-ed--c.ap4.visual.force.com/apex/CommandButtons_Demo?core.apexpages.devmode.url=1&core.apexpages.request.devconsole=1
+-->
+<apex:page controller="Button_Example" >
+    <apex:form >
+        <apex:commandButton value="submit"/>
+        <apex:commandButton value="cancel" disabled="true"/>
+        <apex:commandButton value="save" rendered="false"/>
+        <apex:commandButton value="Mypage" style="background:Blue"/>
+        <apex:commandButton value="button" action="/apex/SobjectData_StdCntrlr"/>
+        <apex:commandButton value="callme" action="{!callme}" />
+        {!result}
+      </apex:form>
+</apex:page>

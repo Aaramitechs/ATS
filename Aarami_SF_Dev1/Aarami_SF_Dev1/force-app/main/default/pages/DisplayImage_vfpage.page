@@ -1,0 +1,49 @@
+<apex:page standardController="Contact" >
+    <apex:form >
+      
+              <apex:pageBlock >
+        <font size="4pt" color="blue">
+            View the Global Actions resepct to the sObject and use only those Actions 
+        </font>
+        <a href="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_variables_global_action_valid_values.htm" 
+           target="_blank"> 
+            <font size="2pt" color="pink">
+                Click here to View Global $Action
+            </font>
+        </a>
+        </apex:pageBlock>
+        <br/><br/><br/><br/><br/><br/>
+        <apex:pageBlock title="Contact Details">
+           <apex:pageBlockSection title="Contact Information" columns="2">
+               <apex:inputField value="{!Contact.Name }" />  
+               <apex:inputField value="{!Contact.AssistantName }" />
+               <apex:inputField value="{!Contact.AssistantPhone }" />
+               <apex:inputField value="{!Contact.Department }" />
+               <apex:inputField value="{!Contact.MobilePhone }" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Address Information" columns="2">
+                <apex:outputField value="{!Contact.Id }" />
+                <apex:outputField value="{!Contact.LastmodifiedById }" />
+                <apex:outputField value="{!Contact.CreatedById }" />
+                <apex:outputField value="{!Contact.Anniversary_Date__c }" />
+                <apex:outputField value="{!Contact.Loan_Amount__c }" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Additional Information" columns="2">
+                <apex:outputField value="{!Contact.Loan_Amount__c }" />
+                 <apex:inputField value="{!Contact.Languages__c }" />
+                <apex:inputField value="{!Contact.Level__c }" />
+                <apex:outputField value="{!Contact.Title }" />
+            </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+               <apex:commandButton value="View" action="{!URLFOR($Action.Contact.View, Contact.Id)}"/>  
+             <apex:commandButton value="Edit" action="{!URLFOR($Action.Contact.Edit, Contact.Id)}"/>
+             <apex:commandButton value="Delete" action="{!URLFOR($Action.Contact.Delete, Contact.Id)}"/>
+             <apex:commandButton value="Clone" action="{!URLFOR($Action.Contact.Clone)}"/>
+        </apex:pageBlockButtons>
+        
+         </apex:pageBlock>
+        
+        
+        
+    </apex:form>
+</apex:page>

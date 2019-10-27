@@ -1,0 +1,15 @@
+<apex:page controller="Example_March1">
+    <apex:sectionHeader title="{!title}"/>
+    <apex:form >
+        <apex:pageBlock title="{!title}">
+            Enter Name:<apex:inputText value="{!name}"/><br/><br/>
+            Select city:<apex:selectList size="1" value="{!selected}">
+            <apex:selectOption itemLabel="-None-" itemValue="None"/>
+            <apex:selectOption itemLabel="hyd" itemValue="TG"/>
+            <apex:selectoption itemLabel="Ban" itemValue="Ka"/>
+            </apex:selectList><br/>
+            <apex:commandButton value="submit" action="{!submit}"/>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

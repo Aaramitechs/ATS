@@ -1,0 +1,23 @@
+<apex:page controller="ErrorMessageDisplay_Cntrlr_Dec1" tabStyle="Account">
+    
+    <apex:messages />
+    <apex:pageMessages />
+    <!-- the above 2 are to display the messages from the controller
+		It can be info / error / warning/ Confirm / Fatal -->
+    
+    <apex:pageMessage detail="{! cntrl_msg}" severity="Info" strength="3"/>
+    
+    
+    <apex:pageBlock title="Account details">
+        
+        <apex:pageBlockTable columns="4" value="{!act_ls}" var="act">
+            
+            <apex:column value="{!act.Name}" />
+            <apex:column value="{!act.accountNumber}" />
+            <apex:column value="{!act.Type}" />
+            <apex:column value="{!act.Industry}" />
+            
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+</apex:page>

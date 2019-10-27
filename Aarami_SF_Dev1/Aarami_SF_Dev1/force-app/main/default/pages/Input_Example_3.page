@@ -1,0 +1,29 @@
+<apex:page >
+    <apex:form >
+        <apex:pageBlock title="InputComponents">
+            
+            Name:<apex:inputText /><br/><br/>
+            PassWord:<apex:inputsecret /><br/><br/>
+            Address:<apex:inputTextarea rows="4"  cols="40"/><br/><br/>
+            InputcheckBox:<apex:inputCheckbox /><br/><br/>
+            City:<apex:selectList size="1">
+            <apex:selectOption itemLabel="-None-" itemValue="-None-"/>
+            <apex:selectOption itemLabel="HYD" itemValue="TG"/>
+            <apex:selectOption itemLabel="Ban" itemValue="KA"/>
+            </apex:selectList><br/><br/>
+            Radio Buttons:<apex:selectRadio >
+            <apex:selectOption itemLabel="HYD" itemValue="TG"/>
+            <apex:selectOption itemLabel="Ban" itemValue="KA"/>
+            </apex:selectRadio><br/><br/>
+            CheckBoxes:<apex:selectCheckboxes >
+            <apex:selectOption itemLabel="HYD" itemValue="TG"/>
+            <apex:selectOption itemLabel="Ban" itemValue="KA"/>
+            </apex:selectCheckboxes><br/><br/>
+            
+            
+            
+            
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

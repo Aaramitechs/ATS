@@ -1,0 +1,15 @@
+<apex:page standardController="account" recordSetVar="Account">
+    <apex:sectionHeader title="Accounts" subtitle="Home" help="https://help.salesforce.com/articleView?err=1&id=accounts.htm&type=5"/>
+        <apex:detail relatedList="false" />
+        <apex:relatedList list="contacts"/>
+    <apex:relatedList list="Opportunities"/>
+    <apex:form >
+        <apex:pageBlock tabStyle="Account">
+            <apex:pageBlockTable value="{!Account}" var="a" >
+                <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.phone }"/>
+                <apex:column value="{!a.BillingCity}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,24 @@
+<!--Page name:VF_StdCntrlr_InputForm_Example_Nov15.vfp
+Test2 Url on account:https://c.ap4.visual.force.com/apex/VF_StdCntrlr_InputForm_Example_Nov15?Id=0016F00002fNKzN-->
+<apex:page standardController="Account" sidebar="false">
+    <apex:form >
+        <apex:pageBlock title="My Content" mode="Edit" helpUrl="MY_New_VFPage" helpTitle="VFpage">
+            <apex:pageBlockSection title="My content section" columns="2" >
+                <apex:inputField value="{!Account.Name}"/>
+                <apex:inputField value="{!Account.CurrencyIsoCode}"/>
+                <apex:inputField value="{!Account.AccountNumber}"/>
+                <apex:inputField value="{!Account.Type}"/>
+                <apex:inputField value="{!Account.Site}"/>
+                <apex:inputField value="{!Account.AccountSource}"/>
+                <apex:inputField value="{!Account.AnnualRevenue}"/>
+                <apex:inputField value="{!Account.SLAExpirationDate__c}"/>
+                <apex:inputField value="{!Account.SLASerialNumber__c}"/>
+                <apex:inputField value="{!Account.Active__c}"/>
+                
+            </apex:pageBlockSection>   
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!Save}" value="Save"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>    
+    </apex:form>   
+</apex:page>

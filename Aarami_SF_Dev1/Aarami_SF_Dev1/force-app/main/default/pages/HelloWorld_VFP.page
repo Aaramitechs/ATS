@@ -1,0 +1,13 @@
+<apex:page >
+    
+    <h1 style="color:blue"> Hi this is Durga prasad</h1>
+    <p>This is a heading</p>
+    <button>Click me</button>
+    <a href="https://www.ap4.salesforce.com">This is a link</a>
+    <ol>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+        <li style="color:green">Grean Tea</li>
+    </ol>
+</apex:page>

@@ -1,0 +1,42 @@
+<!-- 
+FileName:CustObj_Stdcntrlr_StdActns_Demo.vfp
+Std Controller: RESOURCE__c
+Objective: Give Demo on CustObj_Stdcntrlr_StdActns
+Developer: Durga Prasad
+Test Url:https://bhupathi19-dev-ed--c.ap4.visual.force.com/apex/CustObj_Stdcntrlr_StdActns_Demo?id=a086F000029fEpi
+API: https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_controller_std_actions.htm?search_text=standard%20controller
+(Using Standard Controller Actions)
+-->
+<apex:page standardController="RESOURCE__c">
+    <apex:sectionHeader title="RESOURCES" subtitle="Home" help="https://help.salesforce.com/apex/htauthprovidererrorhandler?ErrorCode=NO_ACCESS&ErrorDescription=Unable+to+find+a+user&ProviderId=0SO30000000000B&startURL=%2Fapex%2Fhtdoor%3Floc%3Dhelp%26target%3Dco_overview.htm%26section%3DCustomObjects%26language%3Den_US%26release%3D218.13.9%26instance%3DAP4"/>
+    <apex:form >
+        <apex:pageBlock tabStyle="RESOURCE__c" >
+            <apex:pageBlockSection title="RESOURCE Detail">
+                <apex:outputField value="{!RESOURCE__c.Name}"/>
+                <apex:outputField value="{!RESOURCE__c.RESOURCE_NO__c}"/>
+                <apex:outputField value="{!RESOURCE__c.DESCRIPTION__c	}"/>
+                <apex:outputField value="{!RESOURCE__c.SUBJECTS__c}"/>
+                <apex:outputField value="{!RESOURCE__c.MOBILE_NO__c}"/>
+                <apex:outputField value="{!RESOURCE__c.PARENT__c}"/>        
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Personal Detail" collapsible="false">
+                <apex:outputField value="{!RESOURCE__c.WEIGHT__c}"/> 
+                <apex:outputField value="{!RESOURCE__c.HEIGHT__c}"/> 
+                <apex:outputField value="{!RESOURCE__c.GENDER__c}"/> 
+                <apex:outputField value="{!RESOURCE__c.DOB__c}"/> 
+                <apex:outputField value="{!RESOURCE__c.AGE__c}"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="New" action="{!urlfor($Action.RESOURCE__c.New)}"/>
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="quicksave" action="{!quicksave}"/>
+                <apex:commandButton value="Clone" Action="{!urlfor($Action.RESOURCE__c.Clone, RESOURCE__c.id)}"/>
+                <apex:commandButton value="Delete" Action="{!urlfor($Action.RESOURCE__c.Delete, RESOURCE__c.id)}"/>
+                <apex:commandButton value="Edit" Action="{!urlfor($Action.RESOURCE__c.Edit, RESOURCE__c.id)}"/>
+                <apex:commandButton value="List" Action="{!urlfor($Action.RESOURCE__c.List, RESOURCE__c.id)}"/>
+                <apex:commandButton value="View" Action="{!urlfor($Action.RESOURCE__c.View, RESOURCE__c.id)}"/>
+                <apex:commandButton value="Share" action="{!URLFOR($Action.RESOURCE__c.Share, RESOURCE__c.Id)}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        </apex:form>
+</apex:page>
