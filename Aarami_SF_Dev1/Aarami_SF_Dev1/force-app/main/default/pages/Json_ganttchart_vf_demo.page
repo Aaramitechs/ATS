@@ -1,4 +1,0 @@
-<apex:page controller="GanttChartData" 
-contentType="application/x-JavaScript; charset=utf-8"  >
-{!jsonString}
-</apex:page>
