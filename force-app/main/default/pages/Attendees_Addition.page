@@ -1,0 +1,68 @@
+<!--
+PageName : Attendee_Addition.vfp
+Objective : This will be used page for selecting the List of attendees and add them to the meeting
+Controller : Attendee_Addition_Cntrlr
+test url: https://c.ap15.visual.force.com/apex/Attendees_Addition?id=a032v00003Ei1ujAAB
+-->
+
+<apex:page standardController="IBC_Meeting__c" extensions="Attendees_Addition_Cntrlr" tabStyle="Account" lightningStylesheets="True" showHeader="True" sidebar="False" id="attPg">
+    <div style="width:100%;"> 
+        <apex:form >
+            <div align="center">
+                <apex:pageBlock title="Existing Attendees" id="exstLst">
+                    <div style="width:800px;margin-left:10px;margin-top:10px;" >
+                        <apex:pageBlockTable value="{!exstedAttndes}" var="a">
+                            <apex:column value="{!a.IBC_Attendee_Name__r.Name}" headerValue="Attendee" />
+                            <apex:column value="{!a.Polling_Response__c}" headerValue="Polling Response" />
+                        </apex:pageBlockTable>
+                    </div>
+                </apex:pageBlock>
+            </div>
+            <br/>
+            <apex:outputPanel id="fm" >
+                <h3>
+                    &nbsp;&nbsp;Select Attendees
+                </h3>
+                <br/>
+                <div align="center"> 
+                    <apex:outputText value="User" style="font-weight:1000"> </apex:outputText>&nbsp;&nbsp;
+                    <apex:inputField value="{!attendee.IBC_Attendee_Name__c}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <apex:outputText value="Response" style="font-weight:1000"> </apex:outputText>&nbsp;&nbsp;
+                    <apex:inputField value="{!attendee.Polling_Response__c}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <apex:commandButton value="Add Attendee" action="{!addRow}" reRender="fm"/> 
+                    <br/><br/>
+                    <apex:pageBlock title="Selected Attendees">
+                        <div style="width:800px;margin-left:10px;margin-top:10px;">
+                            <apex:variable var="rowNumber" value="{!0}"/>
+                            <apex:pageBlockTable value="{!slctdAtndRecs}" var="attendees" id="pb">
+                                <apex:column headerValue="Attendee" value="{!attendees.IBC_Attendee_Name__c}"/>
+                                <apex:column headerValue="Polling Response" value="{!attendees.Polling_Response__c}"/>
+                                <apex:column headerValue="Action">
+                                    <apex:commandButton value="Delete" action="{!deleteRow}" reRender="pb">
+                                        <apex:param name="rowIndex" value="{!rowNumber}"/>
+                                    </apex:commandButton>
+                                    <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+                                </apex:column>
+                                <apex:column headerValue=""/>
+                                <apex:column headerValue=""/>
+                            </apex:pageBlockTable> 
+                            <br/><br/>
+                            <center>
+                                <apex:commandButton value="Add to Meeting" action="{!saveAttendees}" oncomplete="location.reload();" reRender="attPg,exstLst" status="pageStatus" />
+                                <apex:actionStatus id="pageStatus">
+                                    <apex:facet name="start">
+                                        <apex:outputPanel >
+                                            <img src="/img/loading32.gif" width="25" height="25" />
+                                            <apex:outputLabel value="Saving..."/>
+                                        </apex:outputPanel>            
+                                    </apex:facet>
+                                </apex:actionStatus>
+                                <apex:commandButton value="Cancel" action="{!cancel}"  />
+                            </center>
+                        </div> 
+                    </apex:pageBlock>
+                </div>
+            </apex:outputPanel>          
+        </apex:form>
+    </div>
+</apex:page>

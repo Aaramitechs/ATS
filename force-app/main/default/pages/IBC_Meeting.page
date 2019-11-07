@@ -1,0 +1,59 @@
+<!--
+PageName : IBC_Meeting.vfp
+Objective : This will be cust page for adding a meeting details with list of attendees
+Controller : IBC_Meeting_Cntrl
+Test URL for Edit Mode:
+Test URL for New Mode: 
+-->
+<apex:page controller="IBC_Meeting_Cntrl" tabStyle="Account" lightningStylesheets="True" showHeader="True" sidebar="False">
+    <apex:form >
+        <apex:PageBlock Title="IBC Meeting">
+            <apex:pageBlockSection title="Basic Info" collapsible="False" columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Region"/>
+                    <apex:inputfield value="{!ibc.Region__c}"/>
+                </apex:pageBlockSectionItem>    
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Meeting Date"/>
+                    <apex:inputfield value="{!ibc.Meeting_Date__c}"/>
+                </apex:pageBlockSectionItem>    
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Meeting Type"/>
+                    <apex:inputfield value="{!ibc.Meeting_Type__c}"/>
+                </apex:pageBlockSectionItem>    
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Meeting Schedule Type"/>
+                    <apex:inputfield value="{!ibc.Meeting_Schedule_Type__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="ps">
+                    <apex:outputLabel value="Joint Session"/>
+                    <apex:inputfield value="{!ibc.Joint_Session__c}" >
+                        <apex:actionSupport event="onClick" reRender="js" action="{!NULL}"/>
+                    </apex:inputfield>    
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlock title="Attendance" id="pb">
+                <apex:variable var="rowNumber" value="{!1}"/>
+                <apex:pageBlockTable value="{!attendees}" var="a">
+                    <apex:column headerValue="Attendee">
+                        <apex:inputField value="{!a.Attendee__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Polling Response">
+                        <apex:inputField value="{!a.Polling_Response__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Action" >
+                        <apex:commandButton value="Add Row" action="{!addRow}" /> 
+                        <apex:commandButton value="Delete" action="{!deleteRow}" reRender="pb">
+                            <apex:param name="rowIndex" value="{!rowNumber}"/>
+                        </apex:commandButton>
+                        <apex:variable var="rowNumber" value="{!rowNumber}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+                <apex:pageBlockButtons location="Bottom">
+                    <apex:commandButton value="Save" action="{!saveMeeting}"/>
+                    <apex:commandButton value="Cancel" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:PageBlock>
+    </apex:form>
+</apex:page>

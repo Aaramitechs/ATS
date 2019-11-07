@@ -1,0 +1,40 @@
+<!--
+PageName : Case Creation.vfp
+Objective : This is used for creating a new case record
+Controller : Case_Creation_Cntrlr
+
+-->
+<apex:page standardController="Case" extensions="Case_Creation_Cntrlr" lightningStylesheets="True" showHeader="True" sidebar="False">
+    <center>
+        <h2>
+            Case Creation Page
+        </h2>
+        <apex:form >
+            <apex:pageBlock >
+                <apex:pageBlockSection columns="2">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText value="Subject"></apex:outputText>
+                        <apex:inputField value="{!cs.subject}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText value="Origin"></apex:outputText>
+                        <apex:inputField value="{!cs.origin}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText value="Priority"></apex:outputText>
+                        <apex:inputField value="{!cs.Priority}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText value="Type"></apex:outputText>
+                        <apex:inputField value="{!cs.Type}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputText value="Description"></apex:outputText>
+                        <apex:inputField value="{!cs.Description}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:commandButton Value="Save" action="{!insertCase}"/>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:form>
+    </center>
+</apex:page>
