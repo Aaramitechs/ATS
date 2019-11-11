@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Campaign_InProgress_Status</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Campaign InProgress Status</shortDescription>
+        <value>Campaign_InProgress_Status</value>
+    </labels>
+    <labels>
+        <fullName>Campaign_Not_Found_Error_Msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Campaign Not Found Error Msg</shortDescription>
+        <value>Campaign_Not_Found_Error_Msg</value>
+    </labels>
+    <labels>
+        <fullName>Octopus_Activity_Completed_Status</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Octopus Activity Completed Status</shortDescription>
+        <value>Octopus_Activity_Completed_Status</value>
+    </labels>
+    <labels>
+        <fullName>Octopus_Activity_Default_Contact</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Octopus Activity Default Contact</shortDescription>
+        <value>Octopus_Activity_Default_Contact</value>
+    </labels>
+    <labels>
+        <fullName>Octopus_Activity_Initial_Status</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Octopus Activity Initial Status</shortDescription>
+        <value>Octopus_Activity_Initial_Status</value>
+    </labels>
+    <labels>
+        <fullName>Octopus_Campaign_Member_Status</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Octopus Campaign Member Status</shortDescription>
+        <value>Octopus_Campaign_Member_Status</value>
+    </labels>
+    <labels>
+        <fullName>Octopus_Campaign_Not_found_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Octopus Campaign Not found Error</shortDescription>
+        <value>Octopus_Campaign_Not_found_Error</value>
+    </labels>
+    <labels>
+        <fullName>Octopus_Sync_Permitted_Profiles</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Octopus Sync Permitted Profiles</shortDescription>
+        <value>Octopus_Sync_Permitted_Profiles</value>
+    </labels>
+</CustomLabels>
