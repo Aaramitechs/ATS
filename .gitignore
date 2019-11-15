@@ -38,3 +38,5 @@ sfdcprojct.code-workspace
 .gitignore
 sfdcprojct.code-workspace
 sfdcprojct.code-workspace
+force-app/main/default/objects/Test_Object__c/Test_Object__c.object-meta.xml
+.gitignore
