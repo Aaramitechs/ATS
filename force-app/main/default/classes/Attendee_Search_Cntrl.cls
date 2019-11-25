@@ -123,6 +123,7 @@ Public class Attendee_Search_Cntrl {
             A1.IBC_Attendee_Name__c=sopt.getValue();
             A1.IBC_Meeting__c=currentRecordId;
             attendeeList.add(A1);
+            
         }
         insert(attendeeList);
         PageReference pageRef = new PageReference('/'+currentRecordId);
